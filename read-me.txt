@@ -1,0 +1,22 @@
+# Genetic Algorithm Optimization of Bi-directional Functionally Graded Beam (FG Beam) with Porosity
+
+This repository contains the full Python code and example used for the genetic algorithm (GA)-based optimization of a bi-directional functionally graded (FG) beam considering both uniform and non-uniform porosity distributions. The script implements high-order shear deformation theory (HSDT) for accurate analysis and is suitable for engineering research, academic projects, or further extension.
+
+## Features
+
+- Supports both uniform and non-uniform porosity distributions.
+- Full integration with [DEAP](https://deap.readthedocs.io/en/master/) evolutionary computation framework.
+- Calculates natural frequency, weight, and efficiency for optimized beam designs.
+- Highly customizable and well-documented for extension to other FG structures.
+
+## Requirements
+
+- Python 3.8+
+- numpy
+- scipy
+- deap
+
+Install dependencies via pip:
+
+```bash
+pip install numpy scipy deap
