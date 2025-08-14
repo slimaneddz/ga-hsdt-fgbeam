@@ -236,7 +236,7 @@ def optimize_beam(porosity_type):
     toolbox.register("evaluate", optimizer.evaluate, porosity_type)
 
     pop = toolbox.population(n=GA_POP_SIZE)
-    # عينات خاصة
+    #
     for i in range(5):
         pop[i] = creator.Individual([1.0, 1.0, 0.05, 0.3])
     for i in range(5, 15):
@@ -259,7 +259,7 @@ def optimize_beam(porosity_type):
             ALPHA_MIN + samples[i,2]*(ALPHA_MAX-ALPHA_MIN),
             BH_MIN + samples[i,3]*(BH_MAX-BH_MIN)
         ])
-    # إصلاح وضبط السكان الأولي
+    # 
     new_pop = []
     for ind in pop:
         if isinstance(ind, list) and len(ind) == 4 and all(isinstance(x, (int, float, np.floating, np.integer)) for x in ind):
@@ -267,7 +267,7 @@ def optimize_beam(porosity_type):
             new_pop.append(ind)
     pop = new_pop
 
-    # تقييم أولي
+    #
     fitnesses = list(map(toolbox.evaluate, pop))
     for ind, fit in zip(pop, fitnesses):
         ind.fitness.values = fit
@@ -322,3 +322,4 @@ if __name__ == "__main__":
     beam, best_params = optimize_beam('non-uniform')
     show_results(beam, best_params, 'non-uniform')
     print("-"*139)
+
